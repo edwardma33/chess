@@ -16,9 +16,10 @@ for (let i = 0; i<64; i++) {
     square.style.color = '#f6f';
     square.classList.add('square');
 
-    
-
-    square.innerText = coordLetters[currentRowLetter] + (i + 1) % 8;
+    // handle coord numbers and change zeros to 8s
+    currentRowNumber = (i + 1) % 8
+    currentRowNumber == 0 ? currentRowNumber = 8 : null
+    square.innerText = coordLetters[currentRowLetter] + currentRowNumber;
     
     // alternate colors
     if (row % 2 == 0) {
